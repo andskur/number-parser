@@ -1,0 +1,7 @@
+[package]
+name = "number-parsing"
+version = "0.1.0"
+authors = ["Andrew Skurlatov <a.skurlatov@gmail.com>"]
+edition = "2018"
+
+[dependencies]
