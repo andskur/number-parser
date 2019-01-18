@@ -45,6 +45,9 @@ fn convert_numbers(mut number: i64) -> String {
     // String for output
     let mut output = String::new();
 
+    // String for temporary strings
+    let mut tmp: String;
+
     // Hardcode checking MinInt
     if number == i64::min_value() {
         output.push_str("negative nine quintillion, two hundred twenty three quadrillion, three hundred seventy two trillion, thirty six billion, eight hundred fifty four million, seven hundred seventy five thousand, eight hundred seven");
@@ -77,6 +80,7 @@ fn convert_numbers(mut number: i64) -> String {
     for segment in segments {
         // Pass empty segment
         if segment == 0{
+            length -= 1;
             continue;
         }
 
@@ -84,42 +88,42 @@ fn convert_numbers(mut number: i64) -> String {
         let _tens = (segment / 10 % 10) as usize;
         let _units = (segment % 10) as usize;
         if _hundreds > 0 {
-            output.push_str(ONE[_hundreds]);
-            output.push_str(" hundred ");
+            tmp = format!("{} hundred ", ONE[_hundreds]);
+            output.push_str(&tmp);
         }
 
-        // If segment has only hundreds values - add BIG
+        // If segment has only hundreds values - add BIG and pass over
         if _tens == 0 && _units == 0 {
             if BIG[length as usize] != "" {
-                output.push_str(BIG[length as usize]);
-                output.push_str(", ");
+                tmp = format!("{}, ", BIG[length as usize]);
+                output.push_str(&tmp);
+                length -= 1;
+                continue
             }
         }
 
         // Check if 'tens' unit more than 20
         if _tens == 0 {
-            output.push_str(ONE[_units]);
-            output.push_str(" ");
+            tmp = format!("{} ", ONE[_units]);
+            output.push_str(&tmp);
         } else if _tens == 1 {
-            output.push_str(TEEN[_units]);
-            output.push_str(" ");
+            tmp = format!("{} ", TEEN[_units]);
+            output.push_str(&tmp);
         } else {
             // Check if ten not like 20, 30, ..., 90
             if _units > 0 {
-                output.push_str(TEN[_tens]);
-                output.push_str(" ");
-                output.push_str(ONE[_units]);
-                output.push_str(" ");
+                tmp = format!("{} {} ", TEN[_tens], ONE[_units]);
+                output.push_str(&tmp);
             } else {
-                output.push_str(TEEN[_tens]);
-                output.push_str(" ");
+                tmp = format!("{} ", TEEN[_tens]);
+                output.push_str(&tmp);
             }
         }
 
-        // Add biff if needed
+        // Add big if needed
         if BIG[length as usize] != "" {
-            output.push_str(BIG[length as usize]);
-            output.push_str(", ");
+            tmp = format!("{}, ", BIG[length as usize]);
+            output.push_str(&tmp);
         }
 
         length -= 1;
