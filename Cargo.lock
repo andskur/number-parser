@@ -1,4 +1,4 @@
 [[package]]
-name = "number-parsing"
+name = "number-parser"
 version = "0.1.0"
 

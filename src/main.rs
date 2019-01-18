@@ -1,3 +1,4 @@
+// Program that accepts a numeric literal through stdin and writes out a human-readable english form of it
 use std::io;
 
 // Dictionary with english numbers names
@@ -84,6 +85,7 @@ fn convert_numbers(mut number: i64) -> String {
             continue;
         }
 
+        // Get segment numbers
         let _hundreds = (segment / 100 % 10) as usize;
         let _tens = (segment / 10 % 10) as usize;
         let _units = (segment % 10) as usize;

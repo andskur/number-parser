@@ -1,5 +1,5 @@
 [package]
-name = "number-parsing"
+name = "number-parser"
 version = "0.1.0"
 authors = ["Andrew Skurlatov <a.skurlatov@gmail.com>"]
 edition = "2018"
