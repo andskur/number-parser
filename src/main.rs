@@ -57,7 +57,7 @@ fn convert_numbers(mut number: i64) -> String {
 
     // Hardcode checking Zero
     if number == 0 {
-        output.push_str(ONE[0]);
+        output.push_str("zero");
         return output;
     }
 
