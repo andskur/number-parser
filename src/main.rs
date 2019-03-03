@@ -2,7 +2,7 @@
 use std::io;
 
 // Dictionary with english numbers names
-const ONE: &'static [&'static str] = &["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const ONE: &'static [&'static str] = &["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const TEEN: &'static [&'static str] = &["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const TEN: &'static [&'static str] = &["", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 const BIG: &'static [&'static str] = &["", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion"];
