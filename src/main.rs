@@ -117,7 +117,7 @@ fn convert_numbers(mut number: i64) -> String {
                 tmp = format!("{} {} ", TEN[_tens], ONE[_units]);
                 output.push_str(&tmp);
             } else {
-                tmp = format!("{} ", TEEN[_tens]);
+                tmp = format!("{} ", TEN[_tens]);
                 output.push_str(&tmp);
             }
         }
